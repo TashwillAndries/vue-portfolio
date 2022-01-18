@@ -1,14 +1,17 @@
 <template>
   <Sidebar />
-  <Home />
+  <div :style="{ 'margin-left': sidebarWidth }"></div>
   <router-view />
 </template>
 
 <script>
-import Home from "./views/Home/HomeContainer.vue";
 import Sidebar from "./components/SideBar.vue";
+import { sidebarWidth } from "./components/state";
 export default {
-  components: { Home, Sidebar },
+  components: { Sidebar },
+  setup() {
+    return { sidebarWidth };
+  },
 };
 </script>
 
@@ -20,8 +23,8 @@ export default {
   margin: 0;
   overflow-y: overlay;
   overflow-x: hidden;
-  font-family: "Poppins Regular";
-  color: black;
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 button.primary-btn {
