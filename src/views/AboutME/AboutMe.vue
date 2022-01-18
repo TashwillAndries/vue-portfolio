@@ -1,61 +1,71 @@
 <template>
-  <div class="about-info-container">
+  <section class="about-info-container">
     <div class="left">
       <div class="profile-picture">
         <div class="profile-picture-background"></div>
       </div>
     </div>
-    <div class="right">
-      <div class="header">
-        <h2 class="title">About Me</h2>
-      </div>
-      <div class="subheader">
-        <h4>I am a passionate aspiring web designer and developer</h4>
-      </div>
-      <p>
-        I would describe my personality as a mixture between introverted with an
-        adventurous side. I like being indoors, in front of a computer playing
-        games, or watching anime but I am also always willing to try new things.
-        I consider myself to be very honest and kind.
-      </p>
-      <p>
-        My passion for the tech industry began in primary school when we did our
-        first MS Office class, it sparked my interest in computers. I chose
-        (CAT) Computer Application Technology as a subject in high school but it
-        was watching shows like Mr Robot that made me want to dive deeper and
-        learn more about what computers had to offer. My aim is to improve my
-        skills.
-      </p>
+    <div>
+      <div class="right">
+        <div class="header">
+          <h2 class="title">About Me</h2>
+        </div>
+        <div class="subheader">
+          <h4>I am a passionate aspiring web designer and developer</h4>
+        </div>
+        <p>
+          I would describe my personality as a mixture between introverted with
+          an adventurous side. I like being indoors, in front of a computer
+          playing games, or watching anime but I am also always willing to try
+          new things. I consider myself to be very honest and kind.
+        </p>
+        <p>
+          My passion for the tech industry began in primary school when we did
+          our first MS Office class, it sparked my interest in computers. I
+          chose (CAT) Computer Application Technology as a subject in high
+          school but it was watching shows like Mr Robot that made me want to
+          dive deeper and learn more about what computers had to offer. My aim
+          is to improve my skills.
+        </p>
 
-      <div class="personal-info">
-        <div class="left-info">
-          <div class="col-sm-6">
-            <ul>
-              <li>Name: <span>Tashwill Andries</span></li>
-              <li class="age-point">Age: <span>22</span></li>
-              <li>Address: <span>Rocklands, Cape Town</span></li>
-              <li>Licence: <span>Drivers</span></li>
-            </ul>
+        <div class="personal-info">
+          <div class="left-info">
+            <div class="col-sm-6">
+              <ul>
+                <li class="list-point">Name: <span>Tashwill Andries</span></li>
+                <li class="list-point age-point">Age: <span>22</span></li>
+                <li class="list-point">
+                  Address: <span>Rocklands, Cape Town</span>
+                </li>
+                <li class="list-point">Licence: <span>Drivers</span></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="right-info">
-          <div class="col-sm-6">
-            <ul>
-              <li>Phone: <span>+27 72 191 8667</span></li>
-              <li>Whatsapp: <span>+27 84 869 1781</span></li>
-              <li>Languages: <span>English / Afrikaans</span></li>
-              <li>Vaccinated: <span>Yes</span></li>
-            </ul>
+          <div class="right-info">
+            <div class="col-sm-6">
+              <ul>
+                <li class="list-point">Phone: <span>+27 72 191 8667</span></li>
+                <li class="list-point">
+                  Whatsapp: <span>+27 84 869 1781</span>
+                </li>
+                <li class="list-point">
+                  Languages: <span>English / Afrikaans</span>
+                </li>
+                <li class="list-point">Vaccinated: <span>Yes</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="skills-container">
-    <div class="header">
-      <h2 class="title">My Skills</h2>
+  </section>
+  <section class="skills-container">
+    <div class="container">
+      <div class="header">
+        <h2 class="title">My Skills</h2>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -67,9 +77,16 @@ export default {};
   display: flex;
 }
 
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .header h2 {
   font-size: 25px;
-  box-shadow: -39px -8px 0px -1px rgba(54, 53, 59, 0.7) inset;
+  box-shadow: -39px -8px 0px -1px rgba(255, 88, 35, 0.7) inset;
 }
 
 .subheader {
@@ -78,7 +95,7 @@ export default {};
 }
 
 .subheader h4 {
-  border-bottom: 3px solid rgba(54, 53, 59, 0.7);
+  border-bottom: 3px solid rgba(255, 88, 35, 0.7);
   padding-bottom: 4px;
   word-wrap: break-word;
 }
@@ -95,8 +112,8 @@ export default {};
 }
 
 .profile-picture-background {
-  height: 92%;
-  width: 92%;
+  height: 380px;
+  width: 380px;
   background-image: url("../../assets/Home/picture.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,6 +126,11 @@ export default {};
 
 .right {
   font-size: 15px;
+}
+.right p {
+  color: #9b9a9ce8;
+  line-height: 1.8;
+  font-weight: 400;
 }
 
 .personal-info {
@@ -146,9 +168,6 @@ li {
 }
 
 @media screen and (max-width: 1110px) {
-  .left {
-    width: 50%;
-  }
   .left-info {
     white-space: nowrap;
   }
@@ -157,7 +176,91 @@ li {
     white-space: nowrap;
   }
 }
+
+@media screen and (max-width: 910px) {
+  .profile-picture {
+    height: 320px;
+    width: 320px;
+  }
+  .profile-picture-background {
+    height: 320px;
+    width: 320px;
+  }
+  .about-info-container {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .left {
+    display: flex;
+    justify-content: center;
+    margin: unset;
+  }
+  .right {
+    padding: 23px;
+    padding-top: 50px;
+  }
+  .subheader {
+    justify-content: center;
+  }
+  .header h2 {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .skills-container {
+    padding-bottom: 120px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .profile-picture {
+    height: 275px;
+    width: 275px;
+    margin-top: 25px;
+    box-shadow: unset;
+  }
+  .subheader h4 {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.62;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+  }
+
+  .right p {
+    font-size: 12px;
+  }
+  .personal-info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+  }
+  ul li {
+    font-size: 12px;
+  }
+  .list-point {
+    padding: 0px 60px;
+    margin: 0px 55px;
+  }
+  .age-point {
+    margin-left: 9px;
+  }
+  ul {
+    padding-left: 0rem;
+  }
+}
 .skills-container {
-  padding: 0px 86px;
+  padding-top: 120px;
 }
 </style>

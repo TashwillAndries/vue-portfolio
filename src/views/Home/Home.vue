@@ -270,7 +270,7 @@ span.cursor.typing {
     text-align: center;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 384px) {
   .profile-picture {
     height: 275px;
     width: 275px;
