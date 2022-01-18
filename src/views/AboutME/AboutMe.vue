@@ -31,7 +31,7 @@
         <div class="personal-info">
           <div class="left-info">
             <div class="col-sm-6">
-              <ul>
+              <ul class="personal-info-ul">
                 <li class="list-point">Name: <span>Tashwill Andries</span></li>
                 <li class="list-point age-point">Age: <span>22</span></li>
                 <li class="list-point">
@@ -43,7 +43,7 @@
           </div>
           <div class="right-info">
             <div class="col-sm-6">
-              <ul>
+              <ul class="personal-info-ul">
                 <li class="list-point">Phone: <span>+27 72 191 8667</span></li>
                 <li class="list-point">
                   Whatsapp: <span>+27 84 869 1781</span>
@@ -64,12 +64,75 @@
       <div class="header">
         <h2 class="title">My Skills</h2>
       </div>
+      <div class="box">
+        <div class="right-skills">
+          <div class="skill-header">
+            <h4>Personal Skills</h4>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-list" v-for="personal in personals">
+              <div class="bar">
+                <div
+                  class="progress"
+                  v-bind:style="{
+                    background: personal.color,
+                    width: personal.percent + '%',
+                  }"
+                >
+                  <div class="lang">{{ personal.soft }}</div>
+                </div>
+
+                <span class="percent">{{ personal.percent }}%</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="left-skills">
+          <div class="skill-header">
+            <h4>Professional Skills</h4>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-list" v-for="skill in skills">
+              <div class="bar">
+                <div
+                  class="progress"
+                  v-bind:style="{
+                    background: skill.color,
+                    width: skill.percent + '%',
+                  }"
+                >
+                  <div class="lang">{{ skill.lang }}</div>
+                </div>
+                <span class="percent">{{ skill.percent }}%</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      skills: [
+        { lang: "HTML5", percent: 60, color: "#ff5823" },
+        { lang: "CSS", percent: 60, color: "#ff5823" },
+        { lang: "JavaScript", percent: 55, color: "#ff5823" },
+        { lang: "VueJs", percent: 58, color: "#ff5823" },
+        { lang: "Python", percent: 68, color: "#ff5823" },
+      ],
+      personals: [
+        { soft: "Communication", percent: 70, color: "#ff5823" },
+        { soft: "Teamwork", percent: 72, color: "#ff5823" },
+        { soft: "Self-motivation", percent: 85, color: "#ff5823" },
+        { soft: "Good Listener", percent: 90, color: "#ff5823" },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -128,7 +191,7 @@ export default {};
   font-size: 15px;
 }
 .right p {
-  color: #9b9a9ce8;
+  color: #9b9a9c;
   line-height: 1.8;
   font-weight: 400;
 }
@@ -147,11 +210,11 @@ export default {};
   white-space: nowrap;
 }
 
-ul {
+.personal-info-ul {
   list-style: none;
 }
 
-ul li::before {
+.personal-info-ul li::before {
   content: "\2022";
   color: #ff5823;
   font-weight: bold;
@@ -256,11 +319,55 @@ li {
   .age-point {
     margin-left: 9px;
   }
-  ul {
+  .personal-info-ul {
     padding-left: 0rem;
   }
 }
 .skills-container {
   padding-top: 120px;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  justify-content: space-around;
+  width: 90%;
+  margin: 50px auto;
+  background-color: rgba(54, 53, 59, 0.7);
+}
+
+.skill-list li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.lang {
+  margin: -14px;
+  font-size: 20px;
+}
+.bar {
+  width: 100%;
+  background-color: #dfdfdf;
+  overflow: hidden;
+  padding: 1px;
+}
+
+.right-skills,
+.left-skills {
+  width: 100%;
+}
+
+.progress {
+  float: left;
+  padding: 15px;
+}
+.percent {
+  color: #9b9a9c;
+}
+
+.skill-list {
+  padding-left: 0em;
+  margin-left: 0em;
 }
 </style>
