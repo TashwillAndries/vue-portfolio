@@ -23,10 +23,13 @@ export default {
     return {
       projects: [
         {
-          title: "Project One",
+          title: "Calculator",
           color: "green",
           bgText: "Calculator",
-          src: require("../../assets/green-shoe.png"),
+          src: require("../../assets/calculator.png"),
+          description: "A calulator made with javascript, html and css",
+          live: "https://tashwill-calculator.netlify.app",
+          github: "https://github.com/TashwillAndries/Calculator",
         },
         {
           title: "Project Two",

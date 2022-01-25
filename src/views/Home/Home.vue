@@ -132,6 +132,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 14px 0 24px 0;
+  max-width: 350px;
 }
 
 .profile-details-role h1 {
@@ -202,22 +203,25 @@ span.cursor {
   display: inline-block;
   margin-left: 3px;
   width: 4px;
-  background-color: black;
+  background-color: #ff5823;
   animation: cursorBlink 1s infinite;
 }
-
+.typed-text {
+  width: 50px;
+}
 span.cursor.typing {
   animation: none;
+  background-color: #ff5823;
 }
 @keyframes cursorBlink {
   49% {
-    background-color: black;
+    background-color: #ff5823;
   }
   50% {
-    background-color: transparent;
+    background-color: #ff5823;
   }
   99% {
-    background-color: transparent;
+    background-color: #ff5823;
   }
 }
 
