@@ -64,47 +64,62 @@
       <div class="header">
         <h2 class="title">My Skills</h2>
       </div>
-      <div class="box">
-        <div class="right-skills">
-          <div class="skill-header">
-            <h4>Personal Skills</h4>
+      <div class="charts">
+        <div class="chart left-chart">
+          <div class="subtitle">
+            <h4>Professional Skills</h4>
           </div>
-          <ul class="skill-list">
-            <li class="skill-list" v-for="personal in personals">
-              <div class="bar">
-                <div
-                  class="progress"
-                  v-bind:style="{
-                    background: personal.color,
-                    width: personal.percent + '%',
-                  }"
-                >
-                  <div class="lang">{{ personal.soft }}</div>
-                </div>
-
-                <span class="percent">{{ personal.percent }}%</span>
-              </div>
+          <ul class="level">
+            <li><span>Advanced</span></li>
+            <li><span>intermediate</span></li>
+            <li><span>Beginner</span></li>
+            <li><span>Noob</span></li>
+          </ul>
+          <ul class="bars">
+            <li>
+              <div class="bar" data-percentage="51"></div>
+              <span>HTML/CSS</span>
+            </li>
+            <li>
+              <div class="bar" data-percentage="38"></div>
+              <span>JavaScript</span>
+            </li>
+            <li>
+              <div class="bar" data-percentage="36"></div>
+              <span>VueJs</span>
+            </li>
+            <li>
+              <div class="bar" data-percentage="49"></div>
+              <span>python</span>
             </li>
           </ul>
         </div>
-        <div class="left-skills">
-          <div class="skill-header">
-            <h4>Professional Skills</h4>
+        <div class="chart">
+          <div class="subtitle">
+            <h4>Personal Skills</h4>
           </div>
-          <ul class="skill-list">
-            <li class="skill-list" v-for="skill in skills">
-              <div class="bar">
-                <div
-                  class="progress"
-                  v-bind:style="{
-                    background: skill.color,
-                    width: skill.percent + '%',
-                  }"
-                >
-                  <div class="lang">{{ skill.lang }}</div>
-                </div>
-                <span class="percent">{{ skill.percent }}%</span>
-              </div>
+          <ul class="level">
+            <li><span>Advanced</span></li>
+            <li><span>intermediate</span></li>
+            <li><span>Beginner</span></li>
+            <li><span>Noob</span></li>
+          </ul>
+          <ul class="bars">
+            <li>
+              <div class="bar" data-percentage="68"></div>
+              <span>Communication</span>
+            </li>
+            <li>
+              <div class="bar" data-percentage="64"></div>
+              <span>Teamwork</span>
+            </li>
+            <li>
+              <div class="bar" data-percentage="70"></div>
+              <span>Self-motivation</span>
+            </li>
+            <li>
+              <div class="bar" data-percentage="64"></div>
+              <span>Good Listener</span>
             </li>
           </ul>
         </div>
@@ -115,22 +130,18 @@
 
 <script>
 export default {
-  data() {
-    return {
-      skills: [
-        { lang: "HTML5", percent: 60, color: "#ff5823" },
-        { lang: "CSS", percent: 60, color: "#ff5823" },
-        { lang: "JavaScript", percent: 55, color: "#ff5823" },
-        { lang: "VueJs", percent: 58, color: "#ff5823" },
-        { lang: "Python", percent: 68, color: "#ff5823" },
-      ],
-      personals: [
-        { soft: "Communication", percent: 70, color: "#ff5823" },
-        { soft: "Teamwork", percent: 72, color: "#ff5823" },
-        { soft: "Self-motivation", percent: 85, color: "#ff5823" },
-        { soft: "Good Listener", percent: 90, color: "#ff5823" },
-      ],
-    };
+  mounted() {
+    $(function () {
+      $(".bars li .bar").each(function (key, bar) {
+        let percentage = $(this).data("percentage");
+        $(this).animate(
+          {
+            height: percentage + "%",
+          },
+          1000
+        );
+      });
+    });
   },
 };
 </script>
@@ -223,7 +234,7 @@ export default {
   font-size: 20px;
   margin-left: -3em;
 }
-li {
+.list-point {
   margin-left: 10px;
 }
 .age-point {
@@ -309,7 +320,7 @@ li {
 
     justify-content: center;
   }
-  ul li {
+  .personal-info-ul .list-point {
     font-size: 12px;
   }
   .list-point {
@@ -327,47 +338,170 @@ li {
   padding-top: 120px;
 }
 
-.box {
+.subtitle {
   display: flex;
-  flex-direction: row;
-  font-size: 15px;
-  justify-content: space-around;
-  width: 90%;
-  margin: 50px auto;
-  background-color: rgba(54, 53, 59, 0.7);
-}
-
-.skill-list li {
-  list-style-type: none;
-  padding: 10px;
-}
-
-.lang {
-  margin: -14px;
-  font-size: 20px;
-}
-.bar {
+  padding: 15px 0px;
   width: 100%;
-  background-color: #dfdfdf;
-  overflow: hidden;
-  padding: 1px;
+  justify-content: center;
+  text-align: center;
 }
 
-.right-skills,
-.left-skills {
-  width: 100%;
+.subtitle h4 {
+  display: flex;
+  border-bottom: 3px solid rgba(255, 88, 35, 0.7);
+  padding-bottom: 4px;
+  justify-content: center;
+  text-align: center;
+}
+.charts {
+  display: flex;
+  justify-content: space-between;
 }
 
-.progress {
-  float: left;
-  padding: 15px;
+.chart {
+  width: 600px;
+  height: 400px;
+  display: block;
 }
-.percent {
+
+.level {
   color: #9b9a9c;
+  margin: 0px 0px -263px -3px;
+  padding: 0;
+  width: 50px;
+  display: inline-block;
+  float: left;
+}
+.level li {
+  list-style: none;
+  height: 95px;
+  position: relative;
 }
 
-.skill-list {
-  padding-left: 0em;
-  margin-left: 0em;
+.level span {
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  right: 1px;
+}
+.left-chart {
+  margin-right: 35px;
+}
+
+.bars {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(54, 53, 59, 0.7);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 500px;
+  padding-right: 25px;
+  height: 300px;
+  box-shadow: 0 0 10px 0 #555;
+  border-radius: 5px;
+}
+.bars li {
+  display: table-cell;
+  width: 100px;
+  height: 300px;
+  position: relative;
+}
+
+.bars span {
+  width: 100%;
+  position: absolute;
+  bottom: -30px;
+  text-align: center;
+}
+.bars .bar {
+  display: block;
+  background: #ff5823;
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  margin-left: 75px;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
+  transition: 0.5s;
+  transition-property: background, box-shadow;
+}
+
+.bars .bar:hover {
+  background: #f0653b;
+  box-shadow: 0 0 10px 0 rgba(85, 239, 196, 0.5);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1110px) {
+  .bars {
+    width: 410px;
+  }
+  .bars .bar {
+    margin: 0;
+    padding: 0;
+    margin-left: 41px;
+  }
+  .bars span {
+    position: absolute;
+    right: -17px;
+    bottom: -37px;
+  }
+}
+@media screen and (max-width: 910px) {
+  .charts {
+    display: flex;
+    flex-direction: column;
+  }
+  .left-chart {
+    margin-bottom: 25px;
+  }
+
+  .level span {
+    position: absolute;
+    right: -66px;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  /* .skills-container {
+    width: 50%;
+  } */
+  .bars li {
+    margin: 0px 0px 0px 0px;
+  }
+  .chart {
+    margin: 0;
+    width: 150px;
+    padding: 0;
+    margin-right: 25px;
+  }
+  .bars {
+    height: 225px;
+    width: 255px;
+  }
+  .level span {
+    position: absolute;
+    font-size: 10px;
+    right: 50px;
+    top: 16px;
+  }
+  .level li {
+    height: 66px;
+    padding: 0;
+    margin: 0;
+  }
+  .bars .bar {
+    width: 14px;
+    position: absolute;
+    bottom: 75px;
+  }
+  .bars span {
+    position: absolute;
+    bottom: 50px;
+    font-size: 10px;
+    word-wrap: break-word;
+  }
 }
 </style>
