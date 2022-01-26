@@ -1,7 +1,4 @@
 <template>
-  <div class="header">
-    <h2>History</h2>
-  </div>
   <div class="container">
     <div class="timeline">
       <ul>
@@ -54,7 +51,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  components: {},
+};
 </script>
 
 <style scoped>

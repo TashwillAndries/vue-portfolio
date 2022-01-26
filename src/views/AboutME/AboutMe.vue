@@ -165,6 +165,7 @@ export default {
 
 .subheader {
   display: flex;
+  justify-content: center;
   padding: 15px 0px;
 }
 
