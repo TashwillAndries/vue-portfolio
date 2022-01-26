@@ -32,7 +32,7 @@
           <div class="card text-center">
             <img
               src="../../assets/pokedex.png"
-              alt="calculator"
+              alt="pokedex"
               class="card-img-top"
             />
             <div class="card-body">
@@ -56,7 +56,7 @@
           <div class="card text-center">
             <img
               src="../../assets/insect.png"
-              alt="calculator"
+              alt="insect game"
               class="card-img-top"
             />
             <div class="card-body">
@@ -77,7 +77,7 @@
           <div class="card text-center">
             <img
               src="../../assets/bootstrap.png"
-              alt="calculator"
+              alt="Website"
               class="card-img-top"
             />
             <div class="card-body">
@@ -102,7 +102,7 @@
           <div class="card text-center">
             <img
               src="../../assets/hangman.png"
-              alt="calculator"
+              alt="hangman"
               class="card-img-top"
             />
             <div class="card-body">
@@ -116,6 +116,30 @@
               >
               <a
                 href="https://github.com/TashwillAndries/hangman"
+                target="_blank"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img
+              src="../../assets/reaction.png"
+              alt="Reaction Timer"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Reaction Timer</h5>
+              <p class="card-text">
+                A reaction user created with vuejs that tests how fast you are
+                able to click
+              </p>
+              <a href="https://reaction-clicker.netlify.app/" target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/TashwillAndries/Reaction-timer"
                 target="_blank"
                 >Github</a
               >
