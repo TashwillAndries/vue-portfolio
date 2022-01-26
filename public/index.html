@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      rel="stylesheet"
+    />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script
       src="https://kit.fontawesome.com/fac4728399.js"
@@ -26,6 +30,32 @@
         continue.</strong
       >
     </noscript>
+    <form
+      name="contact"
+      method="POST"
+      netlify-honeypot="bot-field"
+      data-netflity="true"
+      hidden
+    >
+      <p class="hidden">
+        <label
+          >Dont fill this out youre humanL <input name="bot-field"
+        /></label>
+      </p>
+      <p>
+        <label>Email: <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Email: <input type="text" name="subject" /></label>
+      </p>
+      <p>
+        <label>Email: <input type="text" name="email" /></label>
+      </p>
+      <p>
+        <label>Message: <textarea name="message"></textarea></label>
+      </p>
+      <p><button type="submit">Send</button></p>
+    </form>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
