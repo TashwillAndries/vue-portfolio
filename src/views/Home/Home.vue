@@ -34,7 +34,9 @@
           </span>
         </div>
         <div class="profile-options">
-          <button class="btn primary-btn">Contact Me</button>
+          <router-link to="/contact" class="btn primary-btn"
+            >Contact Me</router-link
+          >
           <a download href="CURRICULUM-VITAE.pdf">
             <button class="btn highlighted-btn">Get CV</button></a
           >
@@ -115,6 +117,10 @@ export default {
   justify-content: center;
   height: 10%;
   min-height: fit-content;
+}
+a.btn.primary-btn {
+  border-radius: 50px;
+  padding: 10px 30px;
 }
 
 .profile-parent {
