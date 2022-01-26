@@ -1,20 +1,20 @@
 <template>
-  <div class="portfolio-container">
-    <Portfolio />
+  <div class="contact-container">
+    <Contact />
     <Footer />
   </div>
 </template>
 
 <script>
 import Footer from "../Home/Footer/Footer.vue";
-import Portfolio from "../Portfolio/Portfolio.vue";
+import Contact from "../Contact/Contact.vue";
 export default {
-  components: { Portfolio, Footer },
+  components: { Contact, Footer },
 };
 </script>
 
 <style>
-.portfolio-container {
+.contact-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -1,107 +1,159 @@
 <template>
-  <div class="project">
-    <div class="project-inner">
-      <div class="project-image-wrap">
-        <img :src="project.src" class="image" />
+  <section id="projects">
+    <div class="container">
+      <div class="title">
+        <h1>Portfolio</h1>
       </div>
-      <div class="project-detail">
-        <h2>{{ project.title }}</h2>
-        <p>
-          {{ project.description }}
-        </p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img
+              src="../../assets/calculator.png"
+              alt="calculator"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Calculator</h5>
+              <p class="card-text">
+                A calculator made using html, css and javascript
+              </p>
+              <a href="https://tashwill-calculator.netlify.app" target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/TashwillAndries/Calculator"
+                target="_blank"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img
+              src="../../assets/pokedex.png"
+              alt="calculator"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Pokedex</h5>
+              <p class="card-text">
+                A pokedex using html, css, javascript and data from the pokemon
+                api
+              </p>
+              <a href="https://tashwill-pokedex.netlify.app/" target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/TashwillAndries/Pokedex"
+                target="_blank"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img
+              src="../../assets/insect.png"
+              alt="calculator"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Insect Game</h5>
+              <p class="card-text">
+                An insect catch game using html, css and javascript
+              </p>
+              <a href="https://catch-game.netlify.app/" target="_blank">Live</a>
+              <a
+                href="https://github.com/TashwillAndries/insect-game"
+                target="_blank"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img
+              src="../../assets/bootstrap.png"
+              alt="calculator"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Responsive Website</h5>
+              <p class="card-text">
+                A responsive website using html, css and bootstrap
+              </p>
+              <a
+                href="https://responsive-bootstrap.netlify.app/"
+                target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/TashwillAndries/bootstrap-site"
+                target="_blank"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="buttons">
-      <a class="button" :href="project.live">Live</a>
-      <a class="button" :href="project.github">Github</a>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>
-export default {
-  name: "project",
-  props: ["project"],
-};
+export default {};
 </script>
 
 <style scoped>
-.project {
-  flex: 1 1 33.333%;
-  width: 100%;
-  padding: 25px;
+#projects {
+  padding: 30px 0px;
 }
-.project-inner {
-  position: relative;
-  padding: 25px;
-  box-shadow: 0px 0px 16px rgba(255, 88, 35, 0.7);
+.title {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 25px;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
 }
-
-.project-inner {
+.card-body {
   background-color: rgba(54, 53, 59, 0.7);
+  box-shadow: 0 0 20px 7px rgba(255, 86, 35, 0.493);
 }
 
-.project-image-wrap .image {
-  width: 100%;
-  z-index: 0;
-  filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.25));
+.card {
+  margin: 20px 10px;
 }
 
-.project-text-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 65px;
-  bottom: 0;
-  overflow: hidden;
-}
-
-.project-text-wrap h2 {
-  color: #ff5823;
-  font-size: 50px;
-  font-weight: 900;
-  opacity: 0.7;
-  transform-origin: center;
-}
-
-.project-image-wrap {
-  position: relative;
-  transform-origin: center;
-}
-.project-detail {
-  padding: 25px;
-  margin: 0px -25px -25px;
-}
-
-.project-detail h2 {
-  font-size: 24px;
-  color: #9b9a9c;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.project-detail p {
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 300;
-  color: #9b9a9c;
-}
-
-.buttons {
+.card-body a {
   display: flex;
   justify-content: space-around;
-  background-color: rgba(54, 53, 59, 0.7);
-  box-shadow: 0px 0px 16px rgba(255, 88, 35, 0.7);
+  color: #1f2235;
+  text-decoration: underline;
+  font-size: 15px;
+  margin-top: auto;
+  font-weight: 600;
 }
 
-.button {
-  width: 120px;
-  padding: 11px 0;
-  margin-top: 5px;
-  border-radius: 50px;
-  border: 2px solid #ff5823;
-  background-color: rgba(54, 53, 59, 0.7);
-  text-decoration: none;
-  color: white;
+.card-body a:hover {
+  color: #1f22353f;
+}
+
+.card-title {
+  color: #9b9a9c;
+}
+
+.card-text {
+  color: #9b9a9c;
+}
+
+.title h1 {
+  font-size: 25px;
+  box-shadow: -39px -8px 0px -1px rgba(255, 88, 35, 0.7) inset;
 }
 </style>
