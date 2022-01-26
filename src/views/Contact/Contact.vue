@@ -8,7 +8,7 @@
           name="contact"
           method="POST"
           netlify-honeypot="bot-field"
-          data-netflity="true"
+          data-netlify="true"
         >
           <p style="display: none" class="hidden">
             <label
