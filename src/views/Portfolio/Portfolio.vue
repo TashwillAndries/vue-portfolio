@@ -98,6 +98,30 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img
+              src="../../assets/hangman.png"
+              alt="calculator"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hangman Game</h5>
+              <p class="card-text">
+                A hangman game created with html, css, javascript and vuejs
+                composition api
+              </p>
+              <a href="https://vuejs-hangman.netlify.app" target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/TashwillAndries/hangman"
+                target="_blank"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

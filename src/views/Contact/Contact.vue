@@ -18,7 +18,8 @@
           <MDBInput
             type="text"
             name="name"
-            label="Name"
+            label="Your Name"
+            class="input"
             id="form4Name"
             v-model="form.name"
             wrapperClass="mb-4"
@@ -27,7 +28,8 @@
           <!-- Email input -->
           <MDBInput
             type="email"
-            name="email"
+            class="input"
+            name=" Email"
             label="Email address"
             id="form4Email"
             v-model="form.email"
@@ -35,9 +37,10 @@
           />
           <MDBInput
             type="subject"
+            class="input"
             name="subject"
             label="Subject"
-            id="form4Email"
+            id="form4Subject"
             v-model="form.subject"
             wrapperClass="mb-4"
           />
@@ -45,6 +48,7 @@
           <!-- Message input -->
           <MDBTextarea
             label="Message"
+            class="input"
             name="message"
             id="form4Textarea"
             v-model="form.message"
@@ -52,9 +56,7 @@
           />
 
           <!-- Submit button -->
-          <MDBBtn color="primary" block class="mb-4" type="submit">
-            Send
-          </MDBBtn>
+          <MDBBtn block class="mb-4" type="submit"> Send </MDBBtn>
         </form>
       </MDBCol>
     </MDBRow>
@@ -71,7 +73,6 @@ import {
   MDBRow,
   MDBCol,
 } from "mdb-vue-ui-kit";
-import { ref } from "vue";
 export default {
   data: () => ({
     form: {
@@ -109,14 +110,36 @@ export default {
           ...this.form,
         }),
       })
-        .then(() => console.log("successfully submitted"))
+        .then(() => this.$router.push({ path: "/" }))
         .catch((e) => console.error(e));
     },
   },
 };
 </script>
 
-<style scoped>
+<style>
+.btn {
+  border: 2px solid white;
+  background-color: #ff5823 !important;
+  transition: 0.5s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #ff562369 !important;
+}
+
+.form-label {
+  color: #ff5823 !important;
+}
+.form-outline .form-control {
+  color: #fff !important;
+  background-color: black;
+}
+
+.form-outline .form-control:focus {
+  background-color: black;
+}
+
 .header {
   padding-bottom: 50px;
   padding-top: 25px;
