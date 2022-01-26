@@ -21,7 +21,7 @@
             name="name"
             label="Name"
             id="form4Name"
-            v-model="form4Name"
+            v-model="form.name"
             wrapperClass="mb-4"
           />
 
@@ -31,7 +31,7 @@
             name="email"
             label="Email address"
             id="form4Email"
-            v-model="form4Email"
+            v-model="form.email"
             wrapperClass="mb-4"
           />
           <MDBInput
@@ -39,7 +39,7 @@
             name="subject"
             label="Subject"
             id="form4Email"
-            v-model="form4Subject"
+            v-model="form.subject"
             wrapperClass="mb-4"
           />
 
@@ -48,7 +48,7 @@
             label="Message"
             name="message"
             id="form4Textarea"
-            v-model="form4Textarea"
+            v-model="form.message"
             wrapperClass="mb-4"
           />
 
@@ -113,23 +113,6 @@ export default {
         .then(() => console.log("successfully submitted"))
         .catch((e) => console.error(e));
     },
-  },
-  setup() {
-    const form4Name = ref("");
-    const form4Email = ref("");
-    const form4Subject = ref("");
-    const form4Password = ref("");
-    const form4Textarea = ref("");
-    const form4CopyCheck = ref(true);
-
-    return {
-      form4Name,
-      form4Subject,
-      form4Email,
-      form4Password,
-      form4Textarea,
-      form4CopyCheck,
-    };
   },
 };
 </script>
