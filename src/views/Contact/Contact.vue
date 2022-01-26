@@ -7,7 +7,6 @@
           class="w-100"
           name="contact"
           method="POST"
-          netlify-honeypot="bot-field"
           data-netlify="true"
         >
           <p style="display: none" class="hidden">
